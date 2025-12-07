@@ -1,3 +1,16 @@
-.venv
-DATA_FIES
-FINAL
+# Ignore the massive Raw Data
+DATA_FIES/
+
+# Ignore Python Envs and Cache
+.venv/
+__pycache__/
+*.pyc
+
+# Ignore Generated Data (Optional, but good practice)
+*.csv
+*.xlsx
+*.png
+
+# Ignore System files
+.DS_Store
+Thumbs.db
