@@ -1,5 +1,6 @@
 # Ignore the massive Raw Data
 DATA_FIES/
+Synthetic_Analysis_Output/
 
 # Ignore Python Envs and Cache
 .venv/
