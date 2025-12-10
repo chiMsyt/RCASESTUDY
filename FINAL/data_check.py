@@ -2,12 +2,12 @@ import os
 
 import pandas as pd
 
-# NOTE: Using the path you provided for clarity
+# NOTE: Update this path to match your system
 data_path = "/home/tim/Desktop/RCASESTUDY/DATA_FIES/FIES PUF 2023 Volume1.CSV"
 
 try:
     # 1. Load the raw, uncleaned national data
-    # We use 'latin1' encoding as is common for large survey datasets
+    # I use 'latin1' encoding as it's common for large survey datasets
     df_raw = pd.read_csv(data_path, encoding="latin1")
 except FileNotFoundError:
     print("Error: File not found at the specified path.")
