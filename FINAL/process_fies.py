@@ -1,11 +1,12 @@
-import pandas as pd
 import os
+
+import pandas as pd
 
 # --- SMART PATH SETUP ---
 # Get the absolute path of THIS script (process_fies.py)
-script_dir = os.path.dirname(os.path.abspath(__file__)) # .../RCASESTUDY/FINAL
+script_dir = os.path.dirname(os.path.abspath(__file__))  # .../RCASESTUDY/FINAL
 # Go up one level to get the Project Root
-project_root = os.path.dirname(script_dir)              # .../RCASESTUDY
+project_root = os.path.dirname(script_dir)  # .../RCASESTUDY
 # Construct path to Data Folder
 data_folder = os.path.join(project_root, "DATA_FIES")
 # Construct path to Output File (Keep it in FINAL folder)
@@ -18,15 +19,25 @@ print(f">>> LOOKING FOR DATA IN: {path_vol1}")
 
 try:
     # 1. Load Data
-    df = pd.read_csv(path_vol1, encoding='latin1')
+    df = pd.read_csv(path_vol1, encoding="latin1")
 
     # 2. Filter for NCR (Region 13)
     print("Filter for Region 13 (NCR)...")
-    df_ncr = df[df['W_REGN'] == 13].copy()
+    df_ncr = df[df["W_REGN"] == 13].copy()
     print(f" > Found {len(df_ncr)} households.")
 
     # 3. Extract Columns
-    cols = ['W_REGN', 'W_PROV', 'SEQ_NO', 'FSIZE', 'TOINC', 'COFFEE', 'COCOA', 'FOOD_OUTSIDE', 'TOTEX']
+    cols = [
+        "W_REGN",
+        "W_PROV",
+        "SEQ_NO",
+        "FSIZE",
+        "TOINC",
+        "COFFEE",
+        "COCOA",
+        "FOOD_OUTSIDE",
+        "TOTEX",
+    ]
     df_clean = df_ncr[cols].copy()
 
     # 4. Save to FINAL folder
